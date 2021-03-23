@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-
+import Forecast from './Forecast';
 
 /*
 1. make a new server endpoint that takes in woeids
@@ -18,13 +18,13 @@ const CityButtons = (props) => {
   }
 
   if (props.cities.length < 1) {
-    return (<div>Nothing Found in Props</div>)
+    return (<div>Nothing Found</div>)
   }
 
 
   return (
     <div>
-      <div>{cityWeather.consolidated_weather ? `${cityWeather.parent.title} is currently experiencing ${cityWeather.consolidated_weather[0].weather_state_name}` : null}</div>
+      <Forecast cityWeather={cityWeather}/>
       <Buttons cities={props.cities} cityButtonHandler={cityButtonHandler}/>
     </div>
   )
@@ -35,8 +35,6 @@ export default CityButtons;
 const Buttons = (props) => {
   return props.cities.map(city => {
     return (
-      <div>
         <button key={city.woeid} onClick={() => props.cityButtonHandler(city.woeid)}>{city.title}</button>
-      </div>
     )
 })};

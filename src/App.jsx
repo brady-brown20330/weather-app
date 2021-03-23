@@ -32,7 +32,7 @@ const App = (props) => {
     <div>
       <h1>Hello Weather Boy</h1>
       <SearchBar clickHandler={searchButtonHandler} changeHandler={searchBarHandler.bind(this)}/>
-  
+
       <CityButtons cities={cities}/>
     </div>
   )
