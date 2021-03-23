@@ -8,6 +8,7 @@ app.use(cors())
 
 // ENDPOINT: searches for cities that match the input field
 app.get('https://www.metaweather.com/api/location/search/?query=', (req, res) => {
+  res.set('Access-Control-Allow-Origin', '*');
   const url = `https://www.metaweather.com/api/location/search/?query=${req.query.data}`
   return axios.get(url, {
     headers: {
@@ -19,6 +20,7 @@ app.get('https://www.metaweather.com/api/location/search/?query=', (req, res) =>
 
 // ENDPOINT: gets weather for a given city based on woeid
 app.get('https://www.metaweather.com/api/location/', (req, res) => {
+  res.set('Access-Control-Allow-Origin', '*');
   const url = `https://www.metaweather.com/api/location/${req.query.data}/`
   return axios.get(url, {
     headers: {
