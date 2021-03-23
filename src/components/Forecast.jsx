@@ -26,6 +26,8 @@ const DailyForecast = (props) => {
         <div className='date-block' key={date.id}>
           <div>{date.applicable_date}</div>
           <div>{date.weather_state_name}</div>
+          <div>{`Wind from the ${date.wind_direction_compass} at ${Math.round(date.wind_speed)} MPH`}</div>
+          <div>{`Visibility ${Math.round(date.visibility)} miles`}</div>
         </div>
       )
     })
