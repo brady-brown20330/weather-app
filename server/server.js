@@ -3,18 +3,28 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 8080;
 const path = require("path");
+var cors = require('cors')
+app.use(cors())
 
 // ENDPOINT: searches for cities that match the input field
 app.get('https://www.metaweather.com/api/location/search/?query=', (req, res) => {
   const url = `https://www.metaweather.com/api/location/search/?query=${req.query.data}`
-  return axios.get(url)
+  return axios.get(url, {
+    headers: {
+      'Access-Control-Allow-Origin':'*'
+    }
+  })
   .then(data => res.send(data.data))
 })
 
 // ENDPOINT: gets weather for a given city based on woeid
 app.get('https://www.metaweather.com/api/location/', (req, res) => {
   const url = `https://www.metaweather.com/api/location/${req.query.data}/`
-  return axios.get(url)
+  return axios.get(url, {
+    headers: {
+      'Access-Control-Allow-Origin':'*'
+    }
+  })
   .then(data => res.send(data.data))
 })
 
