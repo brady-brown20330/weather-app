@@ -11,7 +11,7 @@ const CityButtons = (props) => {
   const [cityWeather, setCityWeather] = useState({});
 
   const cityButtonHandler = (id) => {
-    axios.get('/weatherByLoc', { params: { data: id } })
+    axios.get('https://www.metaweather.com/api/location/', { params: { data: id } })
     .then(res => {
     setCityWeather(res.data)
     })

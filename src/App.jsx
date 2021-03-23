@@ -16,7 +16,7 @@ const App = (props) => {
 
   //event handler for the  search button
   const searchButtonHandler = () => {
-    axios.get(`/searchByName`, { params: { data: searchText } })
+    axios.get(`https://www.metaweather.com/api/location/search/?query=`, { params: { data: searchText } })
     .then(res => {
       setCities(res.data)
     })
