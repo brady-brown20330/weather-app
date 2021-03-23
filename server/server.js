@@ -5,7 +5,7 @@ const PORT = process.env.PORT || 8080;
 const path = require("path");
 var cors = require('cors')
 
-var whitelist = ['https://60595473dd7e650007f5ccd3--stupefied-blackwell-da7fbd.netlify.app/']
+var whitelist = ['https://stupefied-blackwell-da7fbd.netlify.app/']
 var corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1) {
