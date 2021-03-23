@@ -1,7 +1,6 @@
 import React from "react";
 
 const Forecast = (props) => {
-  console.log(props.cityWeather)
 
   if (!props.cityWeather.consolidated_weather) {
     return (

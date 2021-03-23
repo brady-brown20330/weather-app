@@ -12,21 +12,16 @@ const App = (props) => {
   //event handler to set searchbar text
   const searchBarHandler = (e) => {
     setSearchText(e.target.value)
-    console.log('searchbar: ', searchText)
   }
 
   //event handler for the  search button
   const searchButtonHandler = () => {
     axios.get(`/searchByName`, { params: { data: searchText } })
     .then(res => {
-      console.log(res.data)
       setCities(res.data)
     })
   }
 
-  // useEffect(() => {
-  //   getLocID()
-  // })
 
   return (
     <div>
