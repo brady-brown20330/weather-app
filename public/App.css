@@ -7,3 +7,9 @@
   background-color: royalblue;
   border-radius: 5px;
 }
+
+.date-block {
+  text-align: center;
+  font-size: large;
+  border-style: outset;
+}
