@@ -3,13 +3,10 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 8080;
 const path = require("path");
+var cors = require('cors')
 
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
 
+app.use(cors())
 // ENDPOINT: searches for cities that match the input field
 app.get('https://www.metaweather.com/api/location/search/?query=', (req, res) => {
   const url = `https://www.metaweather.com/api/location/search/?query=${req.query.data}`

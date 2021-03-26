@@ -24,7 +24,7 @@ const App = (props) => {
 
 
   return (
-    <div>
+    <div className='app'>
       <h1>Hello Weather Boy</h1>
       <SearchBar clickHandler={searchButtonHandler} changeHandler={searchBarHandler.bind(this)}/>
 
